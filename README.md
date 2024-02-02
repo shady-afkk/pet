@@ -34,3 +34,28 @@ class VirtualPet
         Console.WriteLine($"{name} is playing. :D");
         health += 10;
         hunger += 5;
+ public void Feed()
+ {
+     if (hunger <= 0)
+     {
+         Console.WriteLine($"{name} is not hungry. :D");
+         return;
+     }
+
+     Console.WriteLine($"{name} is being fed. :D");
+     health += 10;
+     hunger -= 10;
+ }
+
+ public void Sleep()
+ {
+     if (age < 3)
+     {
+         Console.WriteLine($"{name} is too young to sleep. :(");
+         return;
+     }
+
+     Console.WriteLine($"{name} is sleeping. Zzz");
+     health += 10;
+     hunger += 5;
+ }
