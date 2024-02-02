@@ -59,3 +59,20 @@ class VirtualPet
      health += 10;
      hunger += 5;
  }
+    public void Grow()
+    {
+        age++;
+        health -= 10;
+        hunger -= 5;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to Virtual Pet!");
+        Console.Write("Please enter your pet's name: ");
+        string name = Console.ReadLine();
+
+        VirtualPet pet = new VirtualPet(name);
