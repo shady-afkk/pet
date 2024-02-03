@@ -76,3 +76,42 @@ class Program
         string name = Console.ReadLine();
 
         VirtualPet pet = new VirtualPet(name);
+
+        while (true)
+        {
+            Console.WriteLine("\nPlease select an option:");
+            Console.WriteLine("1. Show status");
+            Console.WriteLine("2. Play");
+            Console.WriteLine("3. Feed");
+            Console.WriteLine("4. Sleep");
+            Console.WriteLine("5. Quit");
+            Console.Write("Enter the number of your option: ");
+
+            int option = int.Parse(Console.ReadLine());
+
+            switch (option)
+            {
+                case 1:
+                    pet.ShowStatus();
+                    break;
+                case 2:
+                    pet.Play();
+                    break;
+                case 3:
+                    pet.Feed();
+                    break;
+                case 4:
+                    pet.Sleep();
+                    break;
+                case 5:
+                    Console.WriteLine("Goodbye!");
+                    return;
+                default:
+                    Console.WriteLine("Invalid option. Please try again.");
+                    break;
+            }
+
+            pet.Grow();
+        }
+    }
+}
